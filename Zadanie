@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class Main {
+public class zadanie1 {
     public static void main(String[] args) {
         HangmanGame.startGame(); // Вызов метода из класса HangmanGame
     }
@@ -11,11 +11,11 @@ class HangmanGame {
     public static void startGame() {
         // Список слов для игры
         String[] words = {"java", "computer", "programming", "developer", "keyboard"};
-        
+
         // Случайный выбор слова
         Random rand = new Random();
         String chosenWord = words[rand.nextInt(words.length)];
-        
+
         // Подготовка массива для хранения угаданных букв
         char[] guessedWord = new char[chosenWord.length()];
         for (int i = 0; i < guessedWord.length; i++) {
@@ -32,7 +32,7 @@ class HangmanGame {
             System.out.println("Осталось жизней: " + lives);
             System.out.print("Введите букву: ");
             char guess = scanner.nextLine().charAt(0);
-            
+
             // Проверяем, есть ли буква в слове
             boolean found = false;
             for (int i = 0; i < chosenWord.length(); i++) {
@@ -41,11 +41,11 @@ class HangmanGame {
                     found = true;
                 }
             }
-            
+
             if (!found) {
                 lives--; // Уменьшаем количество жизней
             }
-            
+
             // Проверяем, угадал ли игрок всё слово
             if (String.valueOf(guessedWord).equals(chosenWord)) {
                 won = true;
@@ -62,19 +62,14 @@ class HangmanGame {
 }
 
 
-
-
-
-
-
-
+//----------------------------------------------------------------------------------------------------------//
 
 
 
 import java.util.Scanner;
 import java.text.DecimalFormat;
 
-public class Main { // Измените имя класса на Main
+public class zadanie2 {
     private static final double USD_TO_EUR = 0.85;
     private static final double USD_TO_GBP = 0.75;
     private static final double USD_TO_RUB = 73.0;
@@ -105,20 +100,14 @@ public class Main { // Измените имя класса на Main
 
 
 
-
-
-
-
-
-
-
+//----------------------------------------------------------------------------------------------------------//
 
 
 
 import java.security.SecureRandom;
 import java.util.Scanner;
 
-public class Main { // Изменено на Main
+public class zadanie3 {
     private static final String UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private static final String LOWERCASE = "abcdefghijklmnopqrstuvwxyz";
     private static final String DIGITS = "0123456789";
@@ -128,7 +117,7 @@ public class Main { // Изменено на Main
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        
+
         System.out.print("Введите длину пароля (от 8 до 12): ");
         int length = scanner.nextInt();
 
@@ -147,4 +136,3 @@ public class Main { // Изменено на Main
         scanner.close();
     }
 }
-
